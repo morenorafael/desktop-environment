@@ -3,6 +3,8 @@ from os import path
 from libqtile import bar, widget
 from libqtile.config import Screen
 
+from settings.path import qtile_path
+
 
 widget_defaults = dict(
     font='UbuntuMono Nerd Font',
@@ -61,9 +63,7 @@ screens = [
                 # UPDATES
                 widget.Image(
                     filename=path.join(
-                        path.expanduser('~'),
-                        '.config',
-                        'qtile',
+                        qtile_path,
                         'themes',
                         'material-ocean',
                         'images',
@@ -91,9 +91,7 @@ screens = [
                 # LAYOUT
                 widget.Image(
                     filename=path.join(
-                        path.expanduser('~'),
-                        '.config',
-                        'qtile',
+                        qtile_path,
                         'themes',
                         'material-ocean',
                         'images',
@@ -118,9 +116,7 @@ screens = [
                 # FECHA Y HORA
                 widget.Image(
                     filename=path.join(
-                        path.expanduser('~'),
-                        '.config',
-                        'qtile',
+                        qtile_path,
                         'themes',
                         'material-ocean',
                         'images',
