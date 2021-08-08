@@ -14,7 +14,10 @@ from settings.mouse import mouse
 
 @hook.subscribe.startup_once
 def autostart():
-    subprocess.call([path.join(path.expanduser('~'), '.config', 'qtile', 'autostart.sh')])
+    subprocess.call([
+        path.join(path.expanduser('~'), '.config', 'qtile', 'autostart.sh')
+    ])
+
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List

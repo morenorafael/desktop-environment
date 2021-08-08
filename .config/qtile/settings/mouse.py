@@ -3,7 +3,6 @@ from libqtile.command import lazy
 from settings.keys import mod
 
 
-
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(),
          start=lazy.window.get_position()),

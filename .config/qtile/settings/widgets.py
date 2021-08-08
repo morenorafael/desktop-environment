@@ -48,7 +48,9 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 # widget.TextBox("default config", name="default"),
-                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                # widget.TextBox(
+                #     "Press &lt;M-r&gt; to spawn", foreground="#d75f5f"
+                # ),
                 widget.Systray(),
                 widget.Sep(
                     background=["#263238", "#263238"],
@@ -58,7 +60,15 @@ screens = [
 
                 # UPDATES
                 widget.Image(
-                    filename=path.join(path.expanduser('~'), '.config', 'qtile', 'themes', 'material-ocean', 'images', 'bar3.png')
+                    filename=path.join(
+                        path.expanduser('~'),
+                        '.config',
+                        'qtile',
+                        'themes',
+                        'material-ocean',
+                        'images',
+                        'bar3.png'
+                    )
                 ),
                 widget.TextBox(
                     foreground=["#263238", "#263238"],
@@ -80,7 +90,15 @@ screens = [
 
                 # LAYOUT
                 widget.Image(
-                    filename=path.join(path.expanduser('~'), '.config', 'qtile', 'themes', 'material-ocean', 'images', 'bar2.png')
+                    filename=path.join(
+                        path.expanduser('~'),
+                        '.config',
+                        'qtile',
+                        'themes',
+                        'material-ocean',
+                        'images',
+                        'bar2.png'
+                    )
                 ),
                 widget.CurrentLayoutIcon(
                     foreground=["#263238", "#263238"],
@@ -99,7 +117,15 @@ screens = [
 
                 # FECHA Y HORA
                 widget.Image(
-                    filename=path.join(path.expanduser('~'), '.config', 'qtile', 'themes', 'material-ocean', 'images', 'bar1.png')
+                    filename=path.join(
+                        path.expanduser('~'),
+                        '.config',
+                        'qtile',
+                        'themes',
+                        'material-ocean',
+                        'images',
+                        'bar1.png'
+                    )
                 ),
                 widget.TextBox(
                     foreground=["#263238", "#263238"],
