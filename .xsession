@@ -42,4 +42,4 @@ setxkbmap latam &
 udiskie -t &
 
 # Wallpaper
-feh --bg-scale Images/background.jpg &
+feh --bg-scale Images/866322.png &
