@@ -60,6 +60,67 @@ screens = [
                     padding=5
                 ),
 
+                # Wheather
+                widget.Image(
+                    filename=path.join(
+                        qtile_path,
+                        'themes',
+                        'material-ocean',
+                        'images',
+                        'bar4.png'
+                    )
+                ),
+                widget.TextBox(
+                    foreground=["#263238", "#263238"],
+                    background=["#c3e88d", "#c3e88d"],
+                    text="摒 "
+                ),
+                widget.OpenWeather(
+                    foreground=["#263238", "#263238"],
+                    background=["#c3e88d", "#c3e88d"],
+                    app_key='ceefe984e6ae8ea8d01560b967bd3a78',
+                    cityid='3688689',
+                    format='{location_city}: {main_temp} °{units_temperature} {humidity}% {weather_details}',
+                    language='es'
+                ),
+                widget.Sep(
+                    background=["#c3e88d", "#c3e88d"],
+                    linewidth=0,
+                    padding=5
+                ),
+
+                # NET GRAPH
+                # widget.Image(
+                #     filename=path.join(
+                #         qtile_path,
+                #         'themes',
+                #         'material-ocean',
+                #         'images',
+                #         'bar4.png'
+                #     )
+                # ),
+                # widget.TextBox(
+                #     foreground=["#263238", "#263238"],
+                #     background=["#f78c6c", "#f78c6c"],
+                #     text="龍 "
+                # ),
+                # widget.Net(
+                #     foreground=["#263238", "#263238"],
+                #     background=["#f78c6c", "#f78c6c"]
+                # ),
+                # widget.NetGraph(
+                #     background=["#f78c6c", "#f78c6c"],
+                #     border_color='f78c6c',
+                #     fill_color='f78c6c',
+                #     graph_color='263238',
+                #     line_width=2
+                # ),
+                # widget.Sep(
+                #     background=["#f78c6c", "#f78c6c"],
+                #     linewidth=0,
+                #     padding=5
+                # ),
+
                 # UPDATES
                 widget.Image(
                     filename=path.join(
@@ -78,8 +139,11 @@ screens = [
                 widget.CheckUpdates(
                     foreground=["#263238", "#263238"],
                     background=["#ffcb6b", "#ffcb6b"],
+                    colour_have_updates='#263238',
+                    colour_no_updates='#263238',
                     display_format='{updates}',
                     no_update_string='N/A',
+                    custom_command='checkupdates',
                     update_interval=1800
                 ),
                 widget.Sep(

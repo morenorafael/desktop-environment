@@ -10,13 +10,13 @@ keys = [
     # VENTANAS
 
     # Cambiar entre ventanas
-    Key([mod], "h", lazy.layout.left(),
+    Key([mod], "Left", lazy.layout.left(),
         desc="Mover el enfoque a la izquierda"),
-    Key([mod], "l", lazy.layout.right(),
+    Key([mod], "Right", lazy.layout.right(),
         desc="Mover el enfoque a la derecha"),
-    Key([mod], "j", lazy.layout.down(),
+    Key([mod], "Down", lazy.layout.down(),
         desc="Mover el enfoque hacia abajo"),
-    Key([mod], "k", lazy.layout.up(),
+    Key([mod], "Up", lazy.layout.up(),
         desc="Mover el enfoque hacia arriba"),
     # Key([mod], "space", lazy.layout.next(),
     #    desc="Mover el foco de la ventana a otra ventana"),
@@ -25,25 +25,25 @@ keys = [
     # pila actual.
     # Si se sale del rango en el diseño de Columnas, se creará una nueva
     # columna.
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(),
+    Key([mod, "shift"], "Left", lazy.layout.shuffle_left(),
         desc="Mover ventana a la izquierda"),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right(),
+    Key([mod, "shift"], "Right", lazy.layout.shuffle_right(),
         desc="Mover ventana a la derecha"),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down(),
+    Key([mod, "shift"], "Down", lazy.layout.shuffle_down(),
         desc="Mover ventana hacia abajo"),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up(),
+    Key([mod, "shift"], "Up", lazy.layout.shuffle_up(),
         desc="Mover ventana hacia arriba"),
 
     # Haga crecer las ventanas. Si la ventana actual está en el borde de la
     # pantalla y la dirección será hacia el borde de la pantalla, la ventana
     # se encogerá.
-    Key([mod, "control"], "h", lazy.layout.grow_left(),
+    Key([mod, "control"], "Left", lazy.layout.grow_left(),
         desc="Hacer crecer la ventana a la izquierda"),
-    Key([mod, "control"], "l", lazy.layout.grow_right(),
+    Key([mod, "control"], "Right", lazy.layout.grow_right(),
         desc="Hacer crecer la ventana a la derecha"),
-    Key([mod, "control"], "j", lazy.layout.grow_down(),
+    Key([mod, "control"], "Down", lazy.layout.grow_down(),
         desc="Hacer crecer la ventana hacia abajo"),
-    Key([mod, "control"], "k", lazy.layout.grow_up(),
+    Key([mod, "control"], "Up", lazy.layout.grow_up(),
         desc="Hacer crecer la ventana hacia arriba"),
     Key([mod], "n", lazy.layout.normalize(),
         desc="Restablecer todos los tamaños de ventana"),
