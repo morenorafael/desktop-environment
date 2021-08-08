@@ -11,7 +11,7 @@ layout_conf = {
 layouts = [
     # layout.Columns(border_focus_stack='#009688'),
     layout.Max(),
-    # Try more layouts by unleashing below layouts.
+    # Pruebe más diseños desatando los siguientes diseños.
     # layout.Stack(num_stacks=2),
     layout.Bsp(**layout_conf),
     layout.Matrix(columns=2, **layout_conf),
@@ -26,7 +26,8 @@ layouts = [
 
 
 floating_layout = layout.Floating(float_rules=[
-    # Run the utility of `xprop` to see the wm class and name of an X client.
+    # Ejecute la utilidad de `xprop` para ver la clase wm y el nombre de un
+    # cliente X.
     *layout.Floating.default_float_rules,
     Match(wm_class='confirmreset'),  # gitk
     Match(wm_class='makebranch'),  # gitk
