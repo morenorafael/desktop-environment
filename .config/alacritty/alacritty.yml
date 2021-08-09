@@ -31,7 +31,9 @@ font:
   normal:
     family: UbuntuMono Nerd Font
     style: Regular
-  size: 12
+  size: 8
 window:
   padding:
     x: 3
+cursor:
+  style: Underline

@@ -80,4 +80,26 @@ keys = [
     # NAVEGACION DE VENTANAS
     Key([mod, "shift"], "m", lazy.spawn("rofi -show"),
         desc="Lanzar Rofi Nav"),
+
+    # SCREENSHOT
+    Key([mod], "s",
+        lazy.spawn("scrot ~/screenshots/%Y-%m-%d-%T-screenshot.png"),
+        desc="Captura de pantalla"),
+
+    # ------------ Hardware Configs ------------
+
+    # Volume
+    Key([mod], "XF86AudioLowerVolume", lazy.spawn(
+        "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+    )),
+    Key([mod], "XF86AudioRaiseVolume", lazy.spawn(
+        "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+    )),
+    Key([mod], "XF86AudioMute", lazy.spawn(
+        "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    )),
+
+    # Brightness
+    Key([mod], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
+    Key([mod], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
 ]
