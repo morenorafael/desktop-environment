@@ -1,9 +1,11 @@
 from os import path
-
 from libqtile import bar, widget
 from libqtile.config import Screen
+import json
 
 from settings.path import qtile_path
+
+colors = path.join(qtile_path, 'themes', 'material-ocean', 'colors.json')
 
 
 widget_defaults = dict(
@@ -61,20 +63,20 @@ screens = [
                         'themes',
                         'material-ocean',
                         'images',
-                        'bar4.png'
+                        'bar6.png'
                     )
                 ),
                 widget.TextBox(
                     foreground=["#263238", "#263238"],
                     background=["#c3e88d", "#c3e88d"],
-                    text="摒 "
+                    text=" "
                 ),
                 widget.OpenWeather(
                     foreground=["#263238", "#263238"],
                     background=["#c3e88d", "#c3e88d"],
                     app_key='ceefe984e6ae8ea8d01560b967bd3a78',
                     cityid='3688689',
-                    format='{location_city}: {main_temp} °{units_temperature} {humidity}% {weather_details}',
+                    format='{main_temp}°{units_temperature} {humidity}% {weather_details}',
                     language='es'
                 ),
                 widget.Sep(
@@ -90,7 +92,7 @@ screens = [
                         'themes',
                         'material-ocean',
                         'images',
-                        'bar3.png'
+                        'bar5.png'
                     )
                 ),
                 widget.TextBox(
@@ -121,7 +123,7 @@ screens = [
                         'themes',
                         'material-ocean',
                         'images',
-                        'bar2.png'
+                        'bar4.png'
                     )
                 ),
                 widget.CurrentLayoutIcon(
@@ -135,6 +137,49 @@ screens = [
                 ),
                 widget.Sep(
                     background=["#f07178", "#f07178"],
+                    linewidth=0,
+                    padding=5
+                ),
+
+                # Systray
+                widget.Image(
+                    filename=path.join(
+                        qtile_path,
+                        'themes',
+                        'material-ocean',
+                        'images',
+                        'bar3.png'
+                    )
+                ),
+                widget.Systray(),
+                widget.Sep(
+                    background=["#263238", "#263238"],
+                    linewidth=0,
+                    padding=5
+                ),
+
+                # Keyboard Layout
+                widget.Image(
+                    filename=path.join(
+                        qtile_path,
+                        'themes',
+                        'material-ocean',
+                        'images',
+                        'bar2.png'
+                    )
+                ),
+                widget.TextBox(
+                    foreground=["#263238", "#263238"],
+                    background=["#f78c6c", "#f78c6c"],
+                    text=" "
+                ),
+                widget.KeyboardLayout(
+                    foreground=["#263238", "#263238"],
+                    background=["#f78c6c", "#f78c6c"],
+                    configured_keyboards=["us", "latam"],
+                ),
+                widget.Sep(
+                    background=["#f78c6c", "#f78c6c"],
                     linewidth=0,
                     padding=5
                 ),
@@ -158,7 +203,7 @@ screens = [
                     foreground=["#263238", "#263238"],
                     background=["#82aaff", "#82aaff"],
                     padding=5,
-                    format='%d/%m/%Y - %a %I:%M %p'
+                    format='%d/%m/%Y - %I:%M %p'
                 ),
                 # widget.QuickExit(),
             ],
@@ -215,20 +260,20 @@ screens = [
                         'themes',
                         'material-ocean',
                         'images',
-                        'bar4.png'
+                        'bar6.png'
                     )
                 ),
                 widget.TextBox(
                     foreground=["#263238", "#263238"],
                     background=["#c3e88d", "#c3e88d"],
-                    text="摒 "
+                    text=" "
                 ),
                 widget.OpenWeather(
                     foreground=["#263238", "#263238"],
                     background=["#c3e88d", "#c3e88d"],
                     app_key='ceefe984e6ae8ea8d01560b967bd3a78',
                     cityid='3688689',
-                    format='{location_city}: {main_temp} °{units_temperature} {humidity}% {weather_details}',
+                    format='{main_temp}°{units_temperature} {humidity}% {weather_details}',
                     language='es'
                 ),
                 widget.Sep(
@@ -244,7 +289,7 @@ screens = [
                         'themes',
                         'material-ocean',
                         'images',
-                        'bar3.png'
+                        'bar5.png'
                     )
                 ),
                 widget.TextBox(
@@ -275,7 +320,7 @@ screens = [
                         'themes',
                         'material-ocean',
                         'images',
-                        'bar2.png'
+                        'bar4.png'
                     )
                 ),
                 widget.CurrentLayoutIcon(
@@ -293,13 +338,14 @@ screens = [
                     padding=5
                 ),
 
+                # Systray
                 widget.Image(
                     filename=path.join(
                         qtile_path,
                         'themes',
                         'material-ocean',
                         'images',
-                        'bar2-systray.png'
+                        'bar3.png'
                     )
                 ),
                 widget.Systray(),
@@ -308,17 +354,43 @@ screens = [
                     linewidth=0,
                     padding=5
                 ),
+
+                # Keyboard Layout
                 widget.Image(
                     filename=path.join(
                         qtile_path,
                         'themes',
                         'material-ocean',
                         'images',
-                        'bar1-systray.png'
+                        'bar2.png'
                     )
+                ),
+                widget.TextBox(
+                    foreground=["#263238", "#263238"],
+                    background=["#f78c6c", "#f78c6c"],
+                    text=" "
+                ),
+                widget.KeyboardLayout(
+                    foreground=["#263238", "#263238"],
+                    background=["#f78c6c", "#f78c6c"],
+                    configured_keyboards=["us", "latam"],
+                ),
+                widget.Sep(
+                    background=["#f78c6c", "#f78c6c"],
+                    linewidth=0,
+                    padding=5
                 ),
 
                 # FECHA Y HORA
+                widget.Image(
+                    filename=path.join(
+                        qtile_path,
+                        'themes',
+                        'material-ocean',
+                        'images',
+                        'bar1.png'
+                    )
+                ),
                 widget.TextBox(
                     foreground=["#263238", "#263238"],
                     background=["#82aaff", "#82aaff"],
@@ -328,8 +400,9 @@ screens = [
                     foreground=["#263238", "#263238"],
                     background=["#82aaff", "#82aaff"],
                     padding=5,
-                    format='%d/%m/%Y - %a %I:%M %p'
+                    format='%d/%m/%Y - %I:%M %p'
                 ),
+                # widget.QuickExit(),
             ],
             24,
             background='#263238',
