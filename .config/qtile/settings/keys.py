@@ -102,4 +102,10 @@ keys = [
     # Brightness
     Key([mod], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
     Key([mod], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+
+    # Brightness Keyboard
+    Key([mod, "shift"], "XF86MonBrightnessUp",
+        lazy.spawn("brightnessctl --device='tpacpi::kbd_backlight' set +1")),
+    Key([mod, "shift"], "XF86MonBrightnessDown",
+        lazy.spawn("brightnessctl --device='tpacpi::kbd_backlight' set 1-")),
 ]

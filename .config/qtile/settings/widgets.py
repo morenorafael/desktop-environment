@@ -1,11 +1,10 @@
 from os import path
 from libqtile import bar, widget
 from libqtile.config import Screen
-import json
 
 from settings.path import qtile_path
-
-colors = path.join(qtile_path, 'themes', 'material-ocean', 'colors.json')
+from themes.material_ocean.colors import colors as ocean
+from themes.nordic_darker.colors import colors as nordic
 
 
 widget_defaults = dict(
@@ -20,8 +19,8 @@ screens = [
         top=bar.Bar(
             [
                 widget.GroupBox(
-                    foreground=["#f1ffff", "#f1ffff"],
-                    background=["#263238", "#263238"],
+                    foreground=ocean["foreground"],
+                    background=ocean["background"],
                     font='UbuntuMono Nerd Font',
                     fontsize=19,
                     margin_y=3,
@@ -29,18 +28,18 @@ screens = [
                     padding_y=8,
                     padding_x=5,
                     borderwidth=1,
-                    active=["#f1ffff", "#f1ffff"],
-                    inactive=["#607D8B", "#607D8B"],
+                    active=ocean["foreground"],
+                    inactive=ocean["text"],
                     rounded=False,
                     highlight_method='block',
-                    this_current_screen_border=["#009688", "#009688"],
+                    this_current_screen_border=ocean["accent"],
                     this_screen_border=["#5c5c5c", "#5c5c5c"],
-                    other_current_screen_border=["#263238", "#263238"],
-                    other_screen_border=["#263238", "#263238"]
+                    other_current_screen_border=ocean["background"],
+                    other_screen_border=ocean["background"]
                 ),
                 widget.WindowName(
-                    foreground=["#009688", "#009688"],
-                    background=["#263238", "#263238"],
+                    foreground=ocean["accent"],
+                    background=ocean["background"],
                     font='UbuntuMono Nerd Font Bold',
                     fontsize=14,
                 ),
@@ -51,7 +50,7 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Sep(
-                    background=["#263238", "#263238"],
+                    background=ocean["background"],
                     linewidth=0,
                     padding=5
                 ),
@@ -61,26 +60,26 @@ screens = [
                     filename=path.join(
                         qtile_path,
                         'themes',
-                        'material-ocean',
+                        'material_ocean',
                         'images',
                         'bar6.png'
                     )
                 ),
                 widget.TextBox(
-                    foreground=["#263238", "#263238"],
-                    background=["#c3e88d", "#c3e88d"],
+                    foreground=ocean["background"],
+                    background=ocean["green"],
                     text=" "
                 ),
                 widget.OpenWeather(
-                    foreground=["#263238", "#263238"],
-                    background=["#c3e88d", "#c3e88d"],
+                    foreground=ocean["background"],
+                    background=ocean["green"],
                     app_key='ceefe984e6ae8ea8d01560b967bd3a78',
                     cityid='3688689',
                     format='{main_temp}°{units_temperature} {humidity}% {weather_details}',
                     language='es'
                 ),
                 widget.Sep(
-                    background=["#c3e88d", "#c3e88d"],
+                    background=ocean["green"],
                     linewidth=0,
                     padding=5
                 ),
@@ -90,28 +89,28 @@ screens = [
                     filename=path.join(
                         qtile_path,
                         'themes',
-                        'material-ocean',
+                        'material_ocean',
                         'images',
                         'bar5.png'
                     )
                 ),
                 widget.TextBox(
-                    foreground=["#263238", "#263238"],
-                    background=["#ffcb6b", "#ffcb6b"],
+                    foreground=ocean["background"],
+                    background=ocean["yellow"],
                     text=" "
                 ),
                 widget.CheckUpdates(
-                    foreground=["#263238", "#263238"],
-                    background=["#ffcb6b", "#ffcb6b"],
-                    colour_have_updates='#263238',
-                    colour_no_updates='#263238',
+                    foreground=ocean["background"],
+                    background=ocean["yellow"],
+                    colour_have_updates=ocean["background"][0],
+                    colour_no_updates=ocean["background"][0],
                     display_format='{updates}',
                     no_update_string='N/A',
                     custom_command='checkupdates',
                     update_interval=1800
                 ),
                 widget.Sep(
-                    background=["#ffcb6b", "#ffcb6b"],
+                    background=ocean["yellow"],
                     linewidth=0,
                     padding=5
                 ),
@@ -121,22 +120,22 @@ screens = [
                     filename=path.join(
                         qtile_path,
                         'themes',
-                        'material-ocean',
+                        'material_ocean',
                         'images',
                         'bar4.png'
                     )
                 ),
                 widget.CurrentLayoutIcon(
-                    foreground=["#263238", "#263238"],
-                    background=["#f07178", "#f07178"],
+                    foreground=ocean["background"],
+                    background=ocean["red"],
                     scale=0.65
                 ),
                 widget.CurrentLayout(
-                    foreground=["#263238", "#263238"],
-                    background=["#f07178", "#f07178"],
+                    foreground=ocean["background"],
+                    background=ocean["red"],
                 ),
                 widget.Sep(
-                    background=["#f07178", "#f07178"],
+                    background=ocean["red"],
                     linewidth=0,
                     padding=5
                 ),
@@ -146,14 +145,14 @@ screens = [
                     filename=path.join(
                         qtile_path,
                         'themes',
-                        'material-ocean',
+                        'material_ocean',
                         'images',
                         'bar3.png'
                     )
                 ),
                 widget.Systray(),
                 widget.Sep(
-                    background=["#263238", "#263238"],
+                    background=ocean["background"],
                     linewidth=0,
                     padding=5
                 ),
@@ -163,23 +162,23 @@ screens = [
                     filename=path.join(
                         qtile_path,
                         'themes',
-                        'material-ocean',
+                        'material_ocean',
                         'images',
                         'bar2.png'
                     )
                 ),
                 widget.TextBox(
-                    foreground=["#263238", "#263238"],
-                    background=["#f78c6c", "#f78c6c"],
+                    foreground=ocean["background"],
+                    background=ocean["orange"],
                     text=" "
                 ),
                 widget.KeyboardLayout(
-                    foreground=["#263238", "#263238"],
-                    background=["#f78c6c", "#f78c6c"],
+                    foreground=ocean["background"],
+                    background=ocean["orange"],
                     configured_keyboards=["us", "latam"],
                 ),
                 widget.Sep(
-                    background=["#f78c6c", "#f78c6c"],
+                    background=ocean["orange"],
                     linewidth=0,
                     padding=5
                 ),
@@ -189,26 +188,26 @@ screens = [
                     filename=path.join(
                         qtile_path,
                         'themes',
-                        'material-ocean',
+                        'material_ocean',
                         'images',
                         'bar1.png'
                     )
                 ),
                 widget.TextBox(
-                    foreground=["#263238", "#263238"],
-                    background=["#82aaff", "#82aaff"],
+                    foreground=ocean["background"],
+                    background=ocean["blue"],
                     text=" "
                 ),
                 widget.Clock(
-                    foreground=["#263238", "#263238"],
-                    background=["#82aaff", "#82aaff"],
+                    foreground=ocean["background"],
+                    background=ocean["blue"],
                     padding=5,
                     format='%d/%m/%Y - %I:%M %p'
                 ),
                 # widget.QuickExit(),
             ],
             24,
-            background='#263238',
+            background=ocean["background"][0],
             opacity=0.95,
         ),
     ),
@@ -217,8 +216,8 @@ screens = [
         top=bar.Bar(
             [
                 widget.GroupBox(
-                    foreground=["#f1ffff", "#f1ffff"],
-                    background=["#263238", "#263238"],
+                    foreground=ocean["foreground"],
+                    background=ocean["background"],
                     font='UbuntuMono Nerd Font',
                     fontsize=19,
                     margin_y=3,
@@ -226,18 +225,18 @@ screens = [
                     padding_y=8,
                     padding_x=5,
                     borderwidth=1,
-                    active=["#f1ffff", "#f1ffff"],
-                    inactive=["#607D8B", "#607D8B"],
+                    active=ocean["foreground"],
+                    inactive=ocean["text"],
                     rounded=False,
                     highlight_method='block',
-                    this_current_screen_border=["#009688", "#009688"],
+                    this_current_screen_border=ocean["accent"],
                     this_screen_border=["#5c5c5c", "#5c5c5c"],
-                    other_current_screen_border=["#263238", "#263238"],
-                    other_screen_border=["#263238", "#263238"]
+                    other_current_screen_border=ocean["background"],
+                    other_screen_border=ocean["background"]
                 ),
                 widget.WindowName(
-                    foreground=["#009688", "#009688"],
-                    background=["#263238", "#263238"],
+                    foreground=ocean["accent"],
+                    background=ocean["background"],
                     font='UbuntuMono Nerd Font Bold',
                     fontsize=14,
                 ),
@@ -248,7 +247,7 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Sep(
-                    background=["#263238", "#263238"],
+                    background=ocean["background"],
                     linewidth=0,
                     padding=5
                 ),
@@ -258,26 +257,27 @@ screens = [
                     filename=path.join(
                         qtile_path,
                         'themes',
-                        'material-ocean',
+                        'nordic_darker',
                         'images',
-                        'bar6.png'
+                        'aurora',
+                        'nord11-end.png'
                     )
                 ),
                 widget.TextBox(
-                    foreground=["#263238", "#263238"],
-                    background=["#c3e88d", "#c3e88d"],
+                    foreground=ocean["background"],
+                    background=nordic["aurora"]["nord11"],
                     text=" "
                 ),
                 widget.OpenWeather(
-                    foreground=["#263238", "#263238"],
-                    background=["#c3e88d", "#c3e88d"],
+                    foreground=ocean["background"],
+                    background=nordic["aurora"]["nord11"],
                     app_key='ceefe984e6ae8ea8d01560b967bd3a78',
                     cityid='3688689',
                     format='{main_temp}°{units_temperature} {humidity}% {weather_details}',
                     language='es'
                 ),
                 widget.Sep(
-                    background=["#c3e88d", "#c3e88d"],
+                    background=nordic["aurora"]["nord11"],
                     linewidth=0,
                     padding=5
                 ),
@@ -287,28 +287,29 @@ screens = [
                     filename=path.join(
                         qtile_path,
                         'themes',
-                        'material-ocean',
+                        'nordic_darker',
                         'images',
-                        'bar5.png'
+                        'aurora',
+                        'nord11-nord12.png'
                     )
                 ),
                 widget.TextBox(
-                    foreground=["#263238", "#263238"],
-                    background=["#ffcb6b", "#ffcb6b"],
+                    foreground=ocean["background"],
+                    background=nordic["aurora"]["nord12"],
                     text=" "
                 ),
                 widget.CheckUpdates(
-                    foreground=["#263238", "#263238"],
-                    background=["#ffcb6b", "#ffcb6b"],
-                    colour_have_updates='#263238',
-                    colour_no_updates='#263238',
+                    foreground=ocean["background"],
+                    background=nordic["aurora"]["nord12"],
+                    colour_have_updates=ocean["background"][0],
+                    colour_no_updates=ocean["background"][0],
                     display_format='{updates}',
                     no_update_string='N/A',
                     custom_command='checkupdates',
                     update_interval=1800
                 ),
                 widget.Sep(
-                    background=["#ffcb6b", "#ffcb6b"],
+                    background=nordic["aurora"]["nord12"],
                     linewidth=0,
                     padding=5
                 ),
@@ -318,39 +319,23 @@ screens = [
                     filename=path.join(
                         qtile_path,
                         'themes',
-                        'material-ocean',
+                        'nordic_darker',
                         'images',
-                        'bar4.png'
+                        'aurora',
+                        'nord12-nord13.png'
                     )
                 ),
                 widget.CurrentLayoutIcon(
-                    foreground=["#263238", "#263238"],
-                    background=["#f07178", "#f07178"],
+                    foreground=ocean["background"],
+                    background=nordic["aurora"]["nord13"],
                     scale=0.65
                 ),
                 widget.CurrentLayout(
-                    foreground=["#263238", "#263238"],
-                    background=["#f07178", "#f07178"],
+                    foreground=ocean["background"],
+                    background=nordic["aurora"]["nord13"],
                 ),
                 widget.Sep(
-                    background=["#f07178", "#f07178"],
-                    linewidth=0,
-                    padding=5
-                ),
-
-                # Systray
-                widget.Image(
-                    filename=path.join(
-                        qtile_path,
-                        'themes',
-                        'material-ocean',
-                        'images',
-                        'bar3.png'
-                    )
-                ),
-                widget.Systray(),
-                widget.Sep(
-                    background=["#263238", "#263238"],
+                    background=nordic["aurora"]["nord13"],
                     linewidth=0,
                     padding=5
                 ),
@@ -360,23 +345,24 @@ screens = [
                     filename=path.join(
                         qtile_path,
                         'themes',
-                        'material-ocean',
+                        'nordic_darker',
                         'images',
-                        'bar2.png'
+                        'aurora',
+                        'nord13-nord14.png'
                     )
                 ),
                 widget.TextBox(
-                    foreground=["#263238", "#263238"],
-                    background=["#f78c6c", "#f78c6c"],
+                    foreground=ocean["background"],
+                    background=nordic["aurora"]["nord14"],
                     text=" "
                 ),
                 widget.KeyboardLayout(
-                    foreground=["#263238", "#263238"],
-                    background=["#f78c6c", "#f78c6c"],
+                    foreground=ocean["background"],
+                    background=nordic["aurora"]["nord14"],
                     configured_keyboards=["us", "latam"],
                 ),
                 widget.Sep(
-                    background=["#f78c6c", "#f78c6c"],
+                    background=nordic["aurora"]["nord14"],
                     linewidth=0,
                     padding=5
                 ),
@@ -386,26 +372,27 @@ screens = [
                     filename=path.join(
                         qtile_path,
                         'themes',
-                        'material-ocean',
+                        'nordic_darker',
                         'images',
-                        'bar1.png'
+                        'aurora',
+                        'nord14-nord15.png'
                     )
                 ),
                 widget.TextBox(
-                    foreground=["#263238", "#263238"],
-                    background=["#82aaff", "#82aaff"],
+                    foreground=ocean["background"],
+                    background=nordic["aurora"]["nord15"],
                     text=" "
                 ),
                 widget.Clock(
-                    foreground=["#263238", "#263238"],
-                    background=["#82aaff", "#82aaff"],
+                    foreground=ocean["background"],
+                    background=nordic["aurora"]["nord15"],
                     padding=5,
                     format='%d/%m/%Y - %I:%M %p'
                 ),
                 # widget.QuickExit(),
             ],
             24,
-            background='#263238',
+            background=ocean["background"][0],
             opacity=0.95,
         ),
     ),
