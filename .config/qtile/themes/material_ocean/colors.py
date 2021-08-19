@@ -7,6 +7,7 @@ colors = {
     "yellow": ["#ffcb6b", "#ffcb6b"],
     "blue": ["#82aaff", "#82aaff"],
     "red": ["#f07178", "#f07178"],
+    "purple": ["#c792ea", "#c792ea"],
     "orange": ["#f78c6c", "#f78c6c"],
     "cyan": ["#89ddff", "#89ddff"],
     "gray": ["#546e7a", "#546e7a"],

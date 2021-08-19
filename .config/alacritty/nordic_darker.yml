@@ -11,17 +11,17 @@ colors:
     white: '0xd1e5ed'
     yellow: '0xffee7e'
   normal:
-    black: '0x1e272c'
-    blue: '0x82aaff'
-    cyan: '0x89ddff'
-    green: '0xc3e88d'
-    magenta: '0xc792ea'
-    red: '0xf07178'
-    white: '0xeeffff'
-    yellow: '0xffcb6b'
+    black: '0x3b4252'
+    blue: '0x88c0d0'
+    cyan: '0x8fbcbb'
+    green: '0xa3be8c'
+    magenta: '0xb48ead'
+    red: '0xbf616a'
+    white: '0xeceff4'
+    yellow: '0xebcb8b'
   primary:
-    background: '0x263238'
-    foreground: '0xb0bec5'
+    background: '0x2e3440'
+    foreground: '0xeceff4'
 
 font:
   offset:

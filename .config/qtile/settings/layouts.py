@@ -1,11 +1,13 @@
 from libqtile import layout
 from libqtile.config import Match
 
+from themes.material_ocean.colors import colors as ocean
+
 
 layout_conf = {
-    'border_focus': '#009688',
+    'border_focus': ocean["accent"][0],
     'border_width': 1,
-    'margin': 4
+    'margin': 6
 }
 
 layouts = [

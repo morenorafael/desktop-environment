@@ -51,4 +51,4 @@ nm-applet &
 flameshot &
 
 # Wallpaper
-feh --bg-scale ~/desktop-environment/.config/qtile/themes/material-ocean/images/background.png &
+feh --bg-scale ~/desktop-environment/.config/qtile/themes/material_ocean/images/background.png &

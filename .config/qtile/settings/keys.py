@@ -68,7 +68,10 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(),
         desc="Shutdown Qtile"),
     # Key([mod], "r", lazy.spawncmd(),
-    #    desc="Genere un comando usando un widget de solicitud"),
+    #    desc="Genere un comando usando un widget de solicitud"),dm-tool lock
+
+    Key([mod, "control"], "l", lazy.spawn("dm-tool lock"),
+        desc="Lock user session"),
 
     # PROGRAMAS
     # MENU
