@@ -70,7 +70,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,9 +106,19 @@ source $ZSH/oh-my-zsh.sh
 alias ll="exa --group-directories-first -l"
 alias tree="exa -T"
 
-alias openvpn-zinobe-connect="openvpn3 session-start --config ~/openvpn/it-UDP4-1147-rafael.moreno-ios-config.ovpn"
-alias openvpn-zinobe-disconnect="openvpn3 session-manage --config ~/openvpn/it-UDP4-1147-rafael.moreno-ios-config.ovpn --disconnect"
-alias openvpn-zinobe-restart="openvpn3 session-manage --config ~/openvpn/it-UDP4-1147-rafael.moreno-ios-config.ovpn --restart"
+alias zinobe-connect="openvpn3 session-start --config ~/openvpn/it-UDP4-1147-rafael.moreno-ios-config.ovpn"
+alias zinobe-disconnect="openvpn3 session-manage --config ~/openvpn/it-UDP4-1147-rafael.moreno-ios-config.ovpn --disconnect"
+alias zinobe-restart="openvpn3 session-manage --config ~/openvpn/it-UDP4-1147-rafael.moreno-ios-config.ovpn --restart"
+
+alias centeo-connect="openvpn3 session-start --config ~/openvpn/Zinobe_rafael.moreno_DevOps.ovpn"
+alias centeo-disconnect="openvpn3 session-manage --config ~/openvpn/Zinobe_rafael.moreno_DevOps.ovpn --disconnect"
+alias centeo-restart="openvpn3 session-manage --config ~/openvpn/Zinobe_rafael.moreno_DevOps.ovpn --restart"
+
+alias aws-zinobe="aws --profile=zinobe"
+alias aws-centeo="aws --profile=centeo"
 
 # export PATH="$HOME/.config/composer/vendor/bin"
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/rafael/.config/composer/vendor/bin
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
