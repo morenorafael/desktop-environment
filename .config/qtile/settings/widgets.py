@@ -1,5 +1,6 @@
 from settings.screens.laptop import screen as laptop
-from settings.screens.monitor import screen as monitor
+from settings.screens.monitor_a import screen as monitor_a
+# from settings.screens.monitorb_b import screen as monitor_b
 
 widget_defaults = dict(
     font='UbuntuMono Nerd Font',
@@ -8,4 +9,4 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-screens = [laptop, monitor]
+screens = [laptop, monitor_a]

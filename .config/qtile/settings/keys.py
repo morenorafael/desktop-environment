@@ -7,6 +7,10 @@ terminal = "alacritty"
 
 keys = [
 
+    # MONITORES
+    Key([mod, "control"], "1", lazy.to_screen(0)),
+    Key([mod, "control"], "2", lazy.to_screen(1)),
+
     # VENTANAS
 
     # Cambiar entre ventanas
@@ -83,11 +87,6 @@ keys = [
     # NAVEGACION DE VENTANAS
     Key([mod, "shift"], "m", lazy.spawn("rofi -show"),
         desc="Lanzar Rofi Nav"),
-
-    # SCREENSHOT
-    Key([mod], "s",
-        lazy.spawn("scrot ~/screenshots/%Y-%m-%d-%T-screenshot.png"),
-        desc="Captura de pantalla"),
 
     # ------------ Hardware Configs ------------
 

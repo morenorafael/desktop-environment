@@ -132,23 +132,6 @@ screen = Screen(
                 padding=5
             ),
 
-            # Systray
-            widget.Image(
-                filename=path.join(
-                    qtile_path,
-                    'themes',
-                    'material_ocean',
-                    'images',
-                    'background-purple.png'
-                )
-            ),
-            widget.Systray(),
-            widget.Sep(
-                background=ocean["background"],
-                linewidth=0,
-                padding=5
-            ),
-
             # Keyboard Layout
             widget.Image(
                 filename=path.join(
@@ -156,7 +139,7 @@ screen = Screen(
                     'themes',
                     'material_ocean',
                     'images',
-                    'orange-background.png'
+                    'orange-purple.png'
                 )
             ),
             widget.TextBox(

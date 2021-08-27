@@ -18,11 +18,12 @@ screen = Screen(
                 margin_x=0,
                 padding_y=8,
                 padding_x=5,
-                borderwidth=1,
+                borderwidth=3,
                 active=ocean["foreground"],
                 inactive=ocean["foreground"],
                 rounded=False,
-                highlight_method='block',
+                highlight_method='line',
+                highlight_color=ocean["background"],
                 this_current_screen_border=ocean["accent"],
                 this_screen_border=["#5c5c5c", "#5c5c5c"],
                 other_current_screen_border=ocean["background"],
@@ -44,6 +45,13 @@ screen = Screen(
                 background=ocean["background"],
                 linewidth=0,
                 padding=5
+            ),
+
+            widget.CurrentScreen(
+                active_color=ocean['green'][0],
+                active_text='  ',
+                inactive_color=ocean['red'][0],
+                inactive_text='  ',
             ),
 
             # Wheather

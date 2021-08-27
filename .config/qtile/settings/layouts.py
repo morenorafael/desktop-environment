@@ -5,9 +5,9 @@ from themes.material_ocean.colors import colors as ocean
 
 
 layout_conf = {
-    'border_focus': ocean["accent"][0],
+    'border_focus': ocean["cyan"][0],
     'border_width': 1,
-    'margin': 6
+    'margin': 8
 }
 
 layouts = [
@@ -16,10 +16,10 @@ layouts = [
     # Pruebe más diseños desatando los siguientes diseños.
     # layout.Stack(num_stacks=2),
     layout.Bsp(**layout_conf),
-    layout.Matrix(columns=2, **layout_conf),
-    layout.MonadTall(**layout_conf),
-    layout.MonadWide(**layout_conf),
-    layout.RatioTile(**layout_conf),
+    # layout.Matrix(columns=2, **layout_conf),
+    # layout.MonadTall(**layout_conf),
+    # layout.MonadWide(**layout_conf),
+    # layout.RatioTile(**layout_conf),
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
