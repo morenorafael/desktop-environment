@@ -1,0 +1,19 @@
+{
+	"Crear plantilla": {
+		"prefix": "vue",
+		"body": [
+			"<script setup>",
+			"$1",
+			"</script>",
+			"",
+			"<template>",
+			"$2",
+			"</template>",
+			"",
+			"<style scoped>",
+			"$3",
+			"</style>",
+		],
+		"description": "Crear plantilla de Vue 3"
+	}
+}

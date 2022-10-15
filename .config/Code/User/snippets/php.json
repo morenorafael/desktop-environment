@@ -1,0 +1,26 @@
+{
+	"Create new class": {
+		"prefix": "class",
+		"body": [
+			"",
+			"namespace $1;",
+			"",
+			"class $2",
+			"{",
+			"\t$3",
+			"}"
+		],
+		"description": "Crea una nueva clase"
+	},
+
+	"Create construct": {
+		"prefix": "__const",
+		"body": [
+			"public function __construct($1)",
+			"{",
+			"\t$3",
+			"}"
+		],
+		"description": "Crea el constructor de la clase"
+	}
+}
